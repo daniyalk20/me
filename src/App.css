@@ -1,20 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:wght@700&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:wght@700&family=Press+Start+2P&display=swap');
+
 * {
-  font-family: "Press Start 2P", system-ui;
+  font-family: "Iceland", sans-serif;
   font-optical-sizing: auto;
 }
 
 .App {
   position: relative;
-  padding: 10px 5% 10% 5%;
-  background-image: 
-    linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5)),
-    url('/public/assets/pixel_bg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  text-align: center;
 }
 
 .App-logo {
@@ -23,21 +15,21 @@
   margin-left: 5%;
 }
 
-.App-body {
-  margin: 20px 5%;
-  height: calc(100vh - 292px);
-}
 
 
 .header_style {
   width: 80%;
   justify-content: center;
-  margin: 0 auto;
-  /* -webkit-box-shadow: 0px 103px 300px -69px rgba(255, 192, 0, 1);
-  -moz-box-shadow: 0px 103px 300px -69px rgba(255, 192, 0, 1);
-  box-shadow: 0px 103px 300px -69px rgba(255, 192, 0, 1); */
-  padding: 10px 20px;
-
+  margin: 10px 5%;
+  position: fixed; /* Make the header floating */
+  position-area: top; /* Position at the top of the viewport */
+  z-index: 9999; /* Ensure the header is on top of all other elements */
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 8vh;
+  background: rgba(104, 103, 103, 0.25); /* Add background to make it visible */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
 }
 .glass-background {
   background: rgba(104, 103, 103, 0.25); /* semi-transparent white background */
@@ -49,9 +41,12 @@
 }
 
 .menu_style {
-  font-size: 20px;
+  font-size: 2rem;
   color: white;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .menu_style p {
@@ -61,7 +56,8 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 0 10px;
+  padding: 0 20px;
+  margin: 0;
 }
 
 .menu_style p:hover {
@@ -72,17 +68,14 @@
   text-shadow: #FFC000;
 }
 
-.hero-image {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 50vh;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  position: relative;
-  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+.hero-logo {
+  
+    padding: 0 20px;
+    margin: 0;
+    transition: all 0.5s ease-in-out,  border-bottom 0.2s ease-in-out;
+    height: 100%;
+    align-items: center;
+    text-align: center;
   
 }
 
@@ -99,7 +92,83 @@ h1 {
   color: whitesmoke;
 }
 
-.hero-intro {
-  padding: 10px;
-  overflow-wrap: anywhere;
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: 
+    linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5)),
+    url('/public/assets/pixel_bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-y: auto; /* Enable vertical scrolling */
+  color: white;
+}
+
+/* Default: Hide small menu */
+.menu_small {
+  display: none;
+}
+
+/* Default: Show large menu */
+.menu_large {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  /* Show small menu on smaller screens */
+  .menu_small {
+    display: block;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 20px;
+    margin: 0;
+    transition: all 0.5s ease-in-out,  border-bottom 0.2s ease-in-out;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+
+  }
+  
+
+  /* Hide large menu on smaller screens */
+  .menu_large {
+    display: none;
+  }
+}
+
+.menu_small:hover{
+  cursor: pointer;
+  background-color: #434242;
+  border-bottom: 10px solid #FFC000;
+  text-shadow: #FFC000;
+}
+
+.CV {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* Dark overlay */
+    url('/public/assets/CV_bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-y: auto; /* Enable vertical scrolling */
+  color: white;
 }
