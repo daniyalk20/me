@@ -20,9 +20,18 @@ function Header() {
     return (
         <Stack direction="row" justifyContent="space-between" className="header_style glass-background">
             <a href="/" style={{ textDecoration: 'none', color: 'white' }}>
-                <p
+                <img
+                    src={`${process.env.PUBLIC_URL}/assets/logo.svg`} // Use PUBLIC_URL for dynamic path resolution
+                    alt="Logo"
                     style={{
-                        padding: '0 20px',
+                        width: 'auto', // Adjust size as needed
+                        height: '50px', // Adjust size as needed
+                        margin: '10px 20px', // Add some margin for spacing
+                    }}
+                    />
+                {/* <p
+                    style={{
+                        padding: '0 20px',it 
                         margin: '0',
                         transition: 'all 0.5s ease-in-out,  border-bottom 0.2s ease-in-out',
                         height: '100%',
@@ -38,7 +47,7 @@ function Header() {
                     <span className="gradient-text" style={{ color: '#FF5733' }}>
                         Khan
                     </span>
-                </p>
+                </p> */}
             </a>
             <div className="menu_small">
                 {/* BusinessCenter icon as a button */}
@@ -49,12 +58,13 @@ function Header() {
                         border: 'none',
                         cursor: 'pointer',
                         color: 'white',
+                        fontSize: '2rem', // Adjust size as needed
                     }}
                     aria-controls={open ? 'basic-menu' : undefined}
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                 >
-                    <BusinessCenter />
+                    <BusinessCenter fontSize='3rem'/>
                 </button>
                 <Menu
                     id="basic-menu"

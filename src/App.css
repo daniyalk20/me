@@ -109,6 +109,7 @@ h1 {
   background-position: center;
   overflow-y: auto; /* Enable vertical scrolling */
   color: white;
+  background-color: black;
 }
 
 /* Default: Hide small menu */
@@ -157,7 +158,7 @@ h1 {
 .CV {
   position: relative;
   width: 100%;
-  height: 100vh;
+  max-height: 100vh; /* Constrain the height to the viewport */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -169,6 +170,8 @@ h1 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  overflow-y: auto; /* Enable vertical scrolling */
+  overflow: auto; /* Enable scrolling for overflowing content */
   color: white;
+  background-color: black;
+  padding: 0 20px; /* Add padding to prevent content from touching edges */
 }
