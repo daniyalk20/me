@@ -1,19 +1,24 @@
-import logo from './logo.png';
 import './App.css';
 
 import { Box } from '@mui/material';
-import BodyComponent from './Components/BodyComponent';
+import Hero from './Components/Hero';
 import Header from './Components/Header';
+import CV from './Components/CV';
+import Projects from './Components/Projects';
+import Blogs from './Components/Blogs';
+import Gallery from './Components/Gallery';
 
 function App() {
-  
+
   return (
     <div className="App">
-      <Header />
-      <Box className="App-body">
-        <BodyComponent />
-      </Box>
-        
+      <Header/>
+      <Hero />
+      <CV />
+      <Projects />
+      <Blogs />
+      <Gallery />
+
     </div>
   );
 }
