@@ -18,7 +18,7 @@ function Header() {
     };
 
     return (
-        <Stack direction="row" justifyContent="space-between" className="header_style glass-background">
+        <Stack id="header" direction="row" justifyContent="space-between" className="header_style glass-background">
             <a href="/" style={{ textDecoration: 'none', color: 'white' }}>
                 <img
                     src={`${process.env.PUBLIC_URL}/assets/logo.svg`} // Use PUBLIC_URL for dynamic path resolution
@@ -97,18 +97,20 @@ function Header() {
                         },
                     }}
                 >
-                    <MenuItem>Home</MenuItem>
-                    <MenuItem>CV</MenuItem>
-                    <MenuItem>Project</MenuItem>
-                    <MenuItem>Gallery</MenuItem>
+                    <MenuItem component="a" href="#hero">Home</MenuItem>
+                    <MenuItem component="a" href="#cv">CV</MenuItem>
+                    <MenuItem component="a" href="#projects">Project</MenuItem>
+                    <MenuItem component="a" href="#blogs">Blogs</MenuItem>
+                    <MenuItem component="a" href="#gallery">Gallery</MenuItem>
                 </Menu>
             </div>
 
             <div className="menu_large menu_style" direction="row" spacing={1}>
-                <p>Home</p>
-                <p>CV</p>
-                <p>Project</p>
-                <p>Gallery</p>
+                <a href="#hero">Home</a>
+                <a href="#cv">CV</a>
+                <a href="#projects">Project</a>
+                <a href="#blogs">Blogs</a>
+                <a href="#gallery">Gallery</a>
             </div>
         </Stack >
     );

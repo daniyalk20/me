@@ -1,0 +1,155 @@
+{
+    "name": "Daniyal Khan",
+    "contact": {
+        "email": "itsdaniyalk7@gmail.com",
+        "phone": "+1 (330) 550-1422"
+    },
+    "links": {
+        "github": "https://github.com/daniyalk20",
+        "linkedin": "https://www.linkedin.com/in/daniyalk20"
+    },
+    "summary": "Software Engineer with expertise in AI-driven applications, full-stack development (React.js, Django, REST APIs), and machine learning; experienced with algorithms for advanced manufacturing and agile workflows.",
+    "education": [
+        {
+            "institution": "Youngstown State University",
+            "location": "Youngstown, OH, USA",
+            "school": "School of Computer Science, Information, and Engineering Technology",
+            "degree": "Master of Computing and Information Systems",
+            "focus": "Machine Learning",
+            "gpa": "3.83/4.0",
+            "start_date": "2022-01",
+            "end_date": "2023-12"
+        },
+        {
+            "institution": "Dr. APJ Abdul Kalam Technical University",
+            "location": "Lucknow, Uttar Pradesh, India",
+            "degree": "Bachelor of Technology, Computer Science and Engineering (Honors)",
+            "gpa": "4.0/4.0",
+            "start_date": "2017-07",
+            "end_date": "2021-05"
+        }
+    ],
+    "experience": [
+        {
+            "company": "Tailored Alloys | Youngstown Business Incubator",
+            "location": "Youngstown, OH, USA",
+            "title": "Software Engineer",
+            "start_date": "2024-01",
+            "end_date": "Present",
+            "highlights": [
+                "Developing AI-driven decision-making tools for manufacturing process selection using LangChain and agentic workflows.",
+                "Building full-stack applications with React.js, Django, REST APIs, and MySQL.",
+                "Implementing agile workflows to optimize software development.",
+                "Designing algorithms for parametric analysis in Laser Powder Bed Fusion (LPBF)."
+            ]
+        },
+        {
+            "company": "Tailored Alloys | Youngstown Business Incubator",
+            "location": "Youngstown, OH, USA",
+            "title": "Intern Software Developer",
+            "start_date": "2023-06",
+            "end_date": "2023-08",
+            "highlights": [
+                "Developed point cloud data refinement and visualization tools for post-process monitoring in LPBF manufacturing.",
+                "Optimized SDLC and enhanced technical documentation of algorithms using JIRA."
+            ]
+        },
+        {
+            "company": "Youngstown State University",
+            "location": "Youngstown, OH, USA",
+            "title": "Graduate Research Assistant",
+            "school_or_center": "School of Computer Science, Information, and Engineering Technology",
+            "start_date": "2022-01",
+            "end_date": "2023-12",
+            "highlights": [
+                "Conducted literature review on missing data imputation methods for time series.",
+                "Refined training models and data to optimize the imputation method.",
+                "Implemented and tested deep learning models using PyTorch and TensorFlow."
+            ]
+        },
+        {
+            "company": "The Rich Center for Autism (Youngstown State University)",
+            "location": "Youngstown, OH, USA",
+            "title": "Student Assistant",
+            "start_date": "2022-04",
+            "end_date": "2022-08",
+            "highlights": [
+                "Assisted students with Autism by adapting computing curriculum for ASD.",
+                "Collected behavior data related to curriculum changes and analyzed results."
+            ]
+        },
+        {
+            "company": "Genensys LLC",
+            "location": "Oviedo, FL, USA",
+            "title": "Intern Web Developer",
+            "start_date": "2020-06",
+            "end_date": "2021-11",
+            "highlights": [
+                "Designed/developed UI and managed data flow using Vue.js for clearinghouses.",
+                "Built and maintained server-side functions, REST APIs, and databases using Java, Spring Boot, .NET Core, C#, and MySQL.",
+                "Worked with EHR/EMR and EDI documents per HIPAA transactions."
+            ]
+        }
+    ],
+    "skills": {
+        "programming": [
+            "Python",
+            "C++"
+        ],
+        "frameworks": [
+            "Django REST framework",
+            "React.js",
+            "LangChain"
+        ],
+        "cloud": [
+            "AWS (Intermediate)"
+        ],
+        "web": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "REST API"
+        ],
+        "databases": [
+            "MySQL"
+        ],
+        "languages": [
+            "English",
+            "Hindi",
+            "Urdu"
+        ]
+    },
+    "projects": [
+        {
+            "name": "Pneumonia Diagnosis Using Deep Learning",
+            "role": "Graduate Final Year Project",
+            "highlights": [
+                "Built a TensorFlow model to diagnose pneumonia from X-ray images.",
+                "Deployed a Django REST API and Vue.js frontend for image-based predictions, achieving ~92% accuracy."
+            ],
+            "tech": [
+                "TensorFlow",
+                "Django",
+                "Vue.js",
+                "REST API"
+            ]
+        }
+    ],
+    "publications": [
+        {
+            "title": "Manufacturability Analysis of Laser Powder Bed Fusion using Machine Learning",
+            "venue": "Youngstown State University",
+            "date": "2023-10"
+        },
+        {
+            "title": "A Comparative Study of Imputation Methods for Time Series Data",
+            "venue": "The Florida Artificial Intelligence Research Society",
+            "date": "2023-05"
+        },
+        {
+            "title": "Security Threats and Technologies on the Internet of Things Systems",
+            "venue": "International Journal for Scientific Research & Development",
+            "date": "2019-07"
+        }
+    ]
+}

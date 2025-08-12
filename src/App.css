@@ -3,6 +3,7 @@
 * {
   font-family: "Iceland", sans-serif;
   font-optical-sizing: auto;
+  
 }
 
 .App {
@@ -61,6 +62,27 @@
 }
 
 .menu_style p:hover {
+  color: #FFC000;
+  background-color: #434242;
+  border-bottom: 10px solid #FFC000;
+  cursor: pointer;
+  text-shadow: #FFC000;
+}
+
+.menu_style a {
+  transition: all 0.5s ease-in-out, border-bottom 0.2s ease-in-out;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  margin: 0;
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Ensure text color matches */
+}
+
+.menu_style a:hover {
   color: #FFC000;
   background-color: #434242;
   border-bottom: 10px solid #FFC000;
@@ -157,21 +179,122 @@ h1 {
 
 .CV {
   position: relative;
+  min-height: 100vh;
   width: 100%;
-  max-height: 100vh; /* Constrain the height to the viewport */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* Dark overlay */
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), /* Darker overlay for better text readability */
     url('/public/assets/CV_bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  overflow: auto; /* Enable scrolling for overflowing content */
+  background-attachment: fixed;
   color: white;
   background-color: black;
-  padding: 0 20px; /* Add padding to prevent content from touching edges */
+  overflow-x: hidden;
+  scrollbar-color: #ffbf0049 transparent;
+  scrollbar-width: thin;
+  transition: scrollbar-color 0.3s ease-in-out;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 191, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 191, 0, 0.6);
+}
+
+/* CV Stepper specific styles */
+.cv-stepper-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 191, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.cv-step-content {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border-left: 3px solid #2196F3;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.cv-step-content:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(5px);
+}
+
+.cv-card {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px !important;
+  transition: all 0.3s ease-in-out;
+  color: white !important;
+}
+
+.cv-card:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.cv-chip-outlined {
+  border-color: rgba(255, 191, 0, 0.6) !important;
+  color: #FFC000 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.cv-chip-outlined:hover {
+  background-color: rgba(255, 191, 0, 0.1) !important;
+  transform: scale(1.05);
+}
+
+.cv-chip-filled {
+  background-color: rgba(33, 150, 243, 0.8) !important;
+  color: white !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.cv-chip-filled:hover {
+  background-color: rgba(33, 150, 243, 1) !important;
+  transform: scale(1.05);
+}
+
+/* Stepper line customization */
+.MuiStepConnector-line {
+  border-color: rgba(255, 191, 0, 0.3) !important;
+  border-left-width: 2px !important;
+}
+
+/* Active step connector */
+.MuiStepConnector-active .MuiStepConnector-line {
+  border-color: #2196F3 !important;
+}
+
+/* Completed step connector */
+.MuiStepConnector-completed .MuiStepConnector-line {
+  border-color: #4CAF50 !important;
 }

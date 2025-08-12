@@ -1,0 +1,327 @@
+/* -------------------------------------------------------
+   Fonts & Base
+------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Iceland&family=Inter:wght@300;400;600;800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:wght@700&family=Press+Start+2P&display=swap');
+
+:root {
+  --brand-primary: #6DA3CC;
+  --brand-secondary: #232729;
+  --brand-accent: #FFC000;
+  --radius: 1rem;
+  --card-bg-dark: #0e1011;
+  --shadow-soft: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+/* Base: readable body with Inter, accents in Iceland via components */
+html, body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+
+* {
+  font-family: "Iceland", sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* App shell can remain as-is */
+.App { position: relative; }
+
+/* -------------------------------------------------------
+   CV Page Container (replaces .CV fixed fullscreen)
+------------------------------------------------------- */
+.cv-page {
+  padding: clamp(16px, 2vw, 32px) 0;
+  background: linear-gradient(180deg, #121416, #1a1f22);
+  color: #fff;
+}
+
+/* -------------------------------------------------------
+   Grid helpers (if you need class hooks)
+------------------------------------------------------- */
+.cv-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.cv-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* -------------------------------------------------------
+   Cards & Chips (match MUI look but usable outside)
+------------------------------------------------------- */
+.cv-card {
+  background: var(--card-bg-dark);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+  color: #fff;
+}
+.cv-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.18);
+  background: #111315;
+}
+
+/* Generic chip styles to pair with MUI Chips if you render any non-MUI tags */
+.cv-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.cv-chip--outline {
+  border: 1.5px solid var(--brand-accent);
+  color: var(--brand-accent);
+  background: transparent;
+}
+.cv-chip--fill {
+  border: 1px solid rgba(109,163,204,0.25);
+  background: var(--brand-primary);
+  color: #0b1114;
+}
+
+/* -------------------------------------------------------
+   Sticky Left Nav (matches IntersectionObserver behavior)
+------------------------------------------------------- */
+.cv-nav {
+  position: sticky;
+  top: 24px;
+  z-index: 2;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+}
+
+.cv-nav__title {
+  display: block;
+  padding: 10px 14px 0 14px;
+  color: rgba(255,255,255,0.7);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cv-nav__list {
+  list-style: none;
+  margin: 6px 0 10px;
+  padding: 6px;
+}
+
+.cv-nav__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.85);
+  transition: background-color 120ms ease, color 120ms ease, outline 120ms ease;
+  outline: none;
+}
+.cv-nav__item:hover {
+  background: rgba(255,255,255,0.06);
+}
+.cv-nav__item.is-active {
+  background: rgba(109,163,204,0.18);
+  color: #fff;
+  outline: 2px solid rgba(109,163,204,0.35);
+}
+
+/* Keyboard focus */
+.cv-nav__item:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 2px;
+}
+
+/* -------------------------------------------------------
+   Section headings & utility
+------------------------------------------------------- */
+.cv-section__title {
+  color: var(--brand-primary);
+  font-weight: 800;
+  margin-bottom: 12px;
+  border-bottom: 2px solid rgba(255,255,255,0.12);
+  padding-bottom: 6px;
+}
+
+.cv-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+}
+
+/* Bulleted highlight lists */
+.cv-bullets {
+  margin: 6px 0 0 18px;
+  padding: 0;
+}
+.cv-bullets li {
+  margin: 6px 0;
+  line-height: 1.55;
+}
+
+/* “Back to top” floating button (if you keep it) */
+.cv-top-btn {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 3;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+}
+
+/* -------------------------------------------------------
+   Print Styles (critical for CVs)
+------------------------------------------------------- */
+@media print {
+  /* White background, black text for clean output */
+  body, .cv-page {
+    background: #ffffff !important;
+    color: #000 !important;
+  }
+
+  /* Hide sticky nav, floating buttons, shadows */
+  .cv-nav,
+  .cv-top-btn,
+  .header_style,
+  .menu_large,
+  .menu_small {
+    display: none !important;
+  }
+
+  /* Remove gradients, glows, and reduce spacing for single-column print */
+  .cv-card {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+
+  /* Make content full-width in print */
+  .cv-content, .cv-container, .cv-page, .App, #root, html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Headings and accents */
+  .cv-section__title {
+    color: #000 !important;
+    border-color: #bbb !important;
+  }
+
+  /* Chip contrast */
+  .cv-chip--fill {
+    background: #e9f2fb !important;
+    border-color: #cde2f5 !important;
+    color: #000 !important;
+  }
+  .cv-chip--outline {
+    border-color: #666 !important;
+    color: #000 !important;
+  }
+
+  /* Avoid page-breaks inside cards when possible */
+  .cv-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* -------------------------------------------------------
+   Accessibility & Motion/Contrast prefs
+------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .cv-card,
+  .cv-nav__item {
+    transition: none !important;
+  }
+  .cv-card:hover { transform: none !important; }
+}
+
+@media (prefers-contrast: more) {
+  .cv-card { border: 2px solid #fff !important; }
+  .cv-nav__item.is-active { outline: 3px solid #fff !important; }
+}
+
+/* -------------------------------------------------------
+   Responsive tweaks
+------------------------------------------------------- */
+@media (max-width: 900px) {
+  .cv-nav { position: static; margin-bottom: 12px; }
+  .cv-top-btn { right: 12px; bottom: 12px; }
+}
+
+/* -------------------------------------------------------
+   (Optional) keep your glass utility & header styles
+   If not needed, you can remove them safely.
+------------------------------------------------------- */
+.glass-background {
+  background: rgba(104,103,103,0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid #ffbf0031;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+/* Keep header if you need it; otherwise feel free to delete */
+.header_style {
+  width: 80%;
+  justify-content: center;
+  margin: 10px 5%;
+  position: fixed;
+  z-index: 9999;
+  padding: 0 20px;
+  height: 8vh;
+  background: rgba(35,39,41,0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Background image for the CV page */
+.cv-with-bg {
+  background-image:
+    linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.85)),
+    url('/public/assets/CV_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Glass utility */
+.cv-glass {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 1rem;
+}
+
+/* Tabs container fixed width */
+.cv-tabs-wrap {
+  width: 880px;           /* constant width for the tab strip */
+  max-width: 95vw;
+  margin: 0 auto;
+}
+
+/* Hide tabs in print; show all sections sequentially instead */
+@media print {
+  .cv-hide-in-print { display: none !important; }
+  .cv-show-in-print { display: block !important; }
+}
+
+

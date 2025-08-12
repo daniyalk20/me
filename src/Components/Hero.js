@@ -7,7 +7,7 @@ function Hero() {
         hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`; // Adjust speed with multiplier
     });
     return (
-        <div className='hero'>
+        <div id= 'hero' className='hero'>
             <p style={{ fontSize: '4rem' }}>
                 Shalom, I’m Daniyal <span className="gradient-text" style={{ color: '#FF5733' }}>Khan</span>
                 <hr style={{ width: '50px', border: '2px solid white' }} />
