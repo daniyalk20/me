@@ -99,7 +99,8 @@
         "frameworks": [
             "Django REST framework",
             "React.js",
-            "LangChain"
+            "LangChain",
+            "LangGraph"
         ],
         "cloud": [
             "AWS (Intermediate)"
@@ -118,6 +119,23 @@
             "Hindi",
             "Urdu"
         ]
+    },
+    "skillDefinitions": {
+        "Python": "A versatile programming language used for web development, data analysis, artificial intelligence, and automation. Perfect for creating websites, analyzing business data, and building smart applications.",
+        "C++": "A powerful programming language used for building high-performance software like games, desktop applications, and system software. Essential for creating fast, efficient programs.",
+        "Django REST framework": "A toolkit for building web APIs that allows different software applications to communicate with each other. Enables mobile apps and websites to share data seamlessly.",
+        "React.js": "A popular library for building interactive user interfaces and websites. Creates responsive, fast-loading web applications that work great on both desktop and mobile devices.",
+        "LangChain": "A framework for developing applications powered by artificial intelligence and language models. Used to build chatbots, content generators, and smart document processing systems.",
+        "LangGraph": "A framework for building applications that leverage graph data structures and algorithms. Ideal for creating knowledge graphs, recommendation systems, and social network analysis tools.",
+        "AWS (Intermediate)": "Amazon's cloud computing platform that provides scalable web hosting, data storage, and computing power. Allows businesses to run applications without maintaining physical servers.",
+        "HTML": "The foundation language for creating web pages and websites. Structures content like text, images, and links that you see when browsing the internet.",
+        "CSS": "The styling language that makes websites look beautiful by controlling colors, fonts, layouts, and animations. Transforms plain web pages into visually appealing designs.",
+        "JavaScript": "A programming language that makes websites interactive and dynamic. Powers features like dropdown menus, form validation, and real-time content updates.",
+        "REST API": "A set of rules for how different software applications communicate over the internet. Allows mobile apps to get data from servers and enables integration between different services.",
+        "MySQL": "A database system that stores and organizes information for websites and applications. Manages data like user accounts, product catalogs, and business records efficiently.",
+        "English": "International language of business and technology, enabling global communication and collaboration in professional environments.",
+        "Hindi": "Native language proficiency enabling effective communication with Hindi-speaking clients and team members, expanding market reach in India.",
+        "Urdu": "Additional language skill that enhances communication capabilities and cultural understanding in diverse professional settings."
     },
     "projects": [
         {
