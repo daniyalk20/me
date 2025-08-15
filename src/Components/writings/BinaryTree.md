@@ -9,8 +9,6 @@ cover: ./images/binary-cover.jpg
 readingTime: 12
 ---
 
-# Binary Search: Beyond the Basics
-
 > Binary search is more than `while (lo <= hi)`: advanced mastery enables clean solutions to complex search problems, minimizes off-by-one headaches, and opens doors to specialized optimizations.
 
 ![Stylized binary search visualization](./images/binary-search.png)

@@ -19,6 +19,7 @@ import remarkGfm from "remark-gfm";
 import "./blog.css";
 import rehypeHighlight from "rehype-highlight";
 import { Divider } from "@mui/material";
+import { Helmet } from "react-helmet-async";
 
 // Import JetBrains Mono font for better readability
 const fontStyles = `
@@ -250,6 +251,11 @@ export default function Writing() {
     };
   }, [slug]);
 
+  // Scroll to top when component mounts or slug changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [slug]);
+
   if (!post) return (
     <Typography 
       sx={{ 
@@ -267,6 +273,19 @@ export default function Writing() {
 
   return (
     <Box mx="auto" mt={4}>
+      <Helmet>
+        <title>{post.title ? `${post.title} | Daniyal Khan - Portfolio` : 'Article | Daniyal Khan - Portfolio'}</title>
+        <meta name="description" content={post.description || post.excerpt || `Read "${post.title}" by Daniyal Khan - A technical article about ${post.tags ? post.tags.join(', ') : 'software development'}.`} />
+        <meta name="keywords" content={post.tags ? post.tags.join(', ') : 'technical writing, programming, software development'} />
+        <meta property="og:title" content={post.title ? `${post.title} | Daniyal Khan - Portfolio` : 'Article | Daniyal Khan - Portfolio'} />
+        <meta property="og:description" content={post.description || post.excerpt || `Read "${post.title}" by Daniyal Khan - A technical article about ${post.tags ? post.tags.join(', ') : 'software development'}.`} />
+        <meta property="og:url" content={`https://daniyalk20.github.io/me/writing/${slug}`} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title ? `${post.title} | Daniyal Khan - Portfolio` : 'Article | Daniyal Khan - Portfolio'} />
+        <meta name="twitter:description" content={post.description || post.excerpt || `Read "${post.title}" by Daniyal Khan - A technical article about ${post.tags ? post.tags.join(', ') : 'software development'}.`} />
+        <link rel="canonical" href={`https://daniyalk20.github.io/me/writing/${slug}`} />
+      </Helmet>
       {coverSrc && (
         <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
           <Card sx={{ borderRadius: "1rem", maxWidth: "80%" }}>

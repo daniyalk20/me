@@ -226,7 +226,7 @@ export default function CV() {
   ).slice(0, 10);
 
   return (
-    <Box className="cv-with-bg" sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", py: { xs: 2, md: 4 } }}>
+    <Box id="cv" className="cv-with-bg" sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", py: { xs: 2, md: 4 } }}>
       <Container maxWidth="lg" sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
         {/* Tabs */}
         <Box className="cv-tabs-wrap cv-hide-in-print" sx={{ mb: 2, pt: 2 }}>

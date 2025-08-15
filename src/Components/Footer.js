@@ -32,7 +32,9 @@ const Footer = () => {
                 background: 'linear-gradient(135deg, rgba(15, 15, 15, 0.85) 0%, rgba(25, 25, 25, 0.75) 100%)',
                 backdropFilter: 'blur(12px)',
                 WebkitBackdropFilter: 'blur(12px)',
-                borderTop: `1px solid rgba(255, 192, 0, 0.08)`,
+                
+                // Simple top border line
+                borderTop: `1px solid var(--grid-bold)`,
 
                 // Subtle grid overlay (muted version)
                 '&::before': {

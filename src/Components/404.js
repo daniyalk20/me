@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
+import { Helmet } from 'react-helmet-async';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -270,6 +271,15 @@ const NotFound = () => {
 
   return (
     <StyledBox>
+      <Helmet>
+        <title>404 - Page Not Found | Daniyal Khan - Portfolio</title>
+        <meta name="description" content="Sorry, the page you are looking for could not be found. Please check the URL or navigate back to the homepage." />
+        <meta name="keywords" content="404, page not found, error" />
+        <meta property="og:title" content="404 - Page Not Found | Daniyal Khan - Portfolio" />
+        <meta property="og:description" content="Sorry, the page you are looking for could not be found. Please check the URL or navigate back to the homepage." />
+        <meta property="og:url" content="https://daniyalk20.github.io/me/404" />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       {/* Floating glitchy URL that follows the cursor */}
       <GlitchURL ref={urlRef} data-url={fullRoute}>
         {fullRoute}
