@@ -1,70 +1,240 @@
-# Getting Started with Create React App
+# Daniyal Khan - Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, interactive portfolio website showcasing professional experience, projects, and skills. Built with React and Material-UI, featuring a responsive design with tabbed navigation and interactive skill definitions.
 
-## Available Scripts
+## 🚀 Live Demo
 
-In the project directory, you can run:
+Visit the live site: [https://daniyalk20.github.io/me/](https://daniyalk20.github.io/me/)
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Interactive CV**: Tabbed navigation with sections for About, Experience, Projects, Skills, Education, and Publications
+- **Skill Definitions**: Click on any skill to see user-friendly explanations for non-technical audiences
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+- **Print-Friendly**: Clean, professional print layout
+- **Modern UI**: Built with Material-UI components and custom styling
+- **Fast Loading**: Optimized build with code splitting and performance best practices
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technology Stack
 
-### `npm test`
+- **Frontend**: React 19.1.0
+- **UI Library**: Material-UI (MUI) 7.1.0
+- **Icons**: Material-UI Icons
+- **Styling**: CSS3 with custom variables and Material-UI theming
+- **Build Tool**: Create React App
+- **Deployment**: GitHub Pages
+- **Fonts**: Iceland, Inter, Josefin Sans, Montserrat, Press Start 2P
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📋 Prerequisites
 
-### `npm run build`
+Before running this project, make sure you have:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Node.js** (v14 or higher)
+- **npm** (v6 or higher)
+- **Git**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔧 Development Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Clone the Repository
 
-### `npm run eject`
+```bash
+git clone https://github.com/daniyalk20/me.git
+cd me
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Install Dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 3. Start Development Server
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
+This runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will reload automatically when you make changes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 4. Run Tests
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm test
+```
 
-### Code Splitting
+Launches the test runner in interactive watch mode.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📝 Development Notes
 
-### Analyzing the Bundle Size
+### Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+src/
+├── Components/
+│   ├── CV.js              # Main CV component with tabbed interface
+│   ├── cv.json           # Personal data and skill definitions
+│   ├── cv.css            # Custom styling
+│   ├── Header.js         # Navigation header
+│   ├── Hero.js           # Landing page hero section
+│   ├── Projects.js       # Projects showcase
+│   ├── Gallery.js        # Image gallery component
+│   ├── Blogs.js          # Blog posts component
+│   └── SubComponents/
+│       ├── HeroIntroduction.js  # Hero intro text
+│       └── SkillPopper.js       # Interactive skill tooltips
+├── App.js                # Main app component
+├── App.css              # Global styles
+└── index.js             # Entry point
+```
 
-### Making a Progressive Web App
+### Key Components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **CV.js**: Main portfolio component with tabbed interface
+- **SkillPopper.js**: Interactive tooltip component for skill definitions
+- **cv.json**: Contains all personal data, experience, and skill definitions
 
-### Advanced Configuration
+### Customization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. **Update Personal Information**: Edit `src/Components/cv.json`
+2. **Add New Skills**: Add to `skills` section and provide definitions in `skillDefinitions`
+3. **Modify Styling**: Update `src/Components/cv.css` or Material-UI theme
+4. **Add New Sections**: Extend the `sections` array in `CV.js`
 
-### Deployment
+## 🚀 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### GitHub Pages Deployment
 
-### `npm run build` fails to minify
+This project is configured for automatic deployment to GitHub Pages:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+# Build and deploy to GitHub Pages
+npm run deploy
+```
+
+This command:
+1. Builds the production version
+2. Pushes the build to the `gh-pages` branch
+3. GitHub Pages automatically serves the site
+
+### Manual Build
+
+```bash
+# Create production build
+npm run build
+```
+
+The build folder contains the production-ready files that can be deployed to any static hosting service.
+
+### Deployment Configuration
+
+The project includes:
+- `homepage` field in `package.json` pointing to GitHub Pages URL
+- `gh-pages` package for automated deployment
+- Pre-deployment build script
+
+## 🔧 Build Configuration
+
+### Available Scripts
+
+- `npm start` - Development server with hot reloading
+- `npm test` - Run test suites
+- `npm run build` - Create production build
+- `npm run deploy` - Build and deploy to GitHub Pages
+- `npm run eject` - Eject from Create React App (irreversible)
+
+### Environment Variables
+
+No environment variables required for basic functionality.
+
+### Environment Variables
+
+No environment variables required for basic functionality.
+
+## 🎨 Customization Guide
+
+### Adding New Skills
+
+1. Open `src/Components/cv.json`
+2. Add the skill to the appropriate category in the `skills` section
+3. Add a user-friendly definition in the `skillDefinitions` section:
+
+```json
+{
+  "skills": {
+    "programming": ["Python", "Your New Skill"]
+  },
+  "skillDefinitions": {
+    "Your New Skill": "A clear explanation of what this skill is used for in business terms."
+  }
+}
+```
+
+### Updating Personal Information
+
+Edit the following sections in `cv.json`:
+- `name`, `contact`, `links` - Basic contact information
+- `summary` - Professional summary
+- `experience` - Work experience with highlights
+- `education` - Educational background
+- `projects` - Portfolio projects
+- `publications` - Academic or professional publications
+
+### Styling Modifications
+
+- **Global styles**: Edit `src/App.css`
+- **CV-specific styles**: Edit `src/Components/cv.css`
+- **Component styles**: Modify inline `sx` props in React components
+- **Theme colors**: Update CSS variables in `cv.css` root section
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Build fails**: Ensure all dependencies are installed with `npm install`
+2. **Port 3000 in use**: The dev server will prompt to use another port
+3. **Deployment issues**: Verify the `homepage` field in `package.json` matches your GitHub Pages URL
+
+### Performance Optimization
+
+- Images are optimized and served from the `public/assets` folder
+- CSS is minified in production builds
+- React components use proper key props for efficient re-rendering
+- Material-UI components are tree-shaken to reduce bundle size
+
+## 📱 Browser Support
+
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## 🤝 Contributing
+
+This is a personal portfolio project, but feedback and suggestions are welcome:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 📞 Contact
+
+- **Email**: itsdaniyalk7@gmail.com
+- **LinkedIn**: [linkedin.com/in/daniyalk20](https://www.linkedin.com/in/daniyalk20)
+- **GitHub**: [github.com/daniyalk20](https://github.com/daniyalk20)
+
+## 🙏 Acknowledgments
+
+- Built with [Create React App](https://create-react-app.dev/)
+- UI components by [Material-UI](https://mui.com/)
+- Icons by [Material-UI Icons](https://mui.com/material-ui/material-icons/)
+- Fonts by [Google Fonts](https://fonts.google.com/)
+
+---
+
+**Built with ❤️ by Daniyal Khan**

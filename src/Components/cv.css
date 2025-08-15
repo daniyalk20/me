@@ -67,19 +67,29 @@ html, body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "He
 .cv-chip {
   display: inline-flex;
   align-items: center;
-  height: 26px;
-  padding: 0 10px;
+  height: auto;
+  min-height: 32px;
+  padding: 0 12px;
   border-radius: 999px;
-  font-size: 12px;
-  line-height: 1;
+  font-size: 14px;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
 .cv-chip--outline {
-  border: 1.5px solid var(--brand-accent);
+  border: 2px solid var(--brand-accent);
   color: var(--brand-accent);
   background: transparent;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
 }
+.cv-chip--outline:hover {
+  border-color: #ffd84d;
+  background: rgba(255, 192, 0, 0.1);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 4px 15px rgba(255, 192, 0, 0.2);
+}
+
 .cv-chip--fill {
   border: 1px solid rgba(109,163,204,0.25);
   background: var(--brand-primary);
@@ -280,9 +290,8 @@ html, body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "He
 .header_style {
   width: 80%;
   justify-content: center;
-  margin: 10px 5%;
-  position: fixed;
-  z-index: 9999;
+  margin: 10px auto; /* center horizontally */
+  position: static; /* header should scroll with the page */
   padding: 0 20px;
   height: 8vh;
   background: rgba(35,39,41,0.55);
@@ -294,9 +303,9 @@ html, body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "He
 
 /* Background image for the CV page */
 .cv-with-bg {
-  background-image:
+  /* background-image:
     linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.85)),
-    url('/public/assets/CV_bg.jpg');
+    url('/public/assets/CV_bg.jpg'); */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -322,6 +331,60 @@ html, body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "He
 @media print {
   .cv-hide-in-print { display: none !important; }
   .cv-show-in-print { display: block !important; }
+}
+
+/* -------------------------------------------------------
+   Skill Popper Styles
+------------------------------------------------------- */
+.skill-popper-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.skill-info-icon {
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Custom geeky cursor for skill chips */
+.cv-chip--outline:hover {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23FFC000'%3E%3Crect x='11' y='0' width='2' height='24'/%3E%3Crect x='0' y='11' width='24' height='2'/%3E%3Crect x='8' y='8' width='8' height='8' fill='none' stroke='%23FFC000' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E") 12 12, crosshair !important;
+}
+
+/* Alternative terminal cursor */
+.skill-chip-terminal-cursor:hover {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='20' viewBox='0 0 16 20'%3E%3Crect x='0' y='0' width='16' height='20' fill='%23000' stroke='%23FFC000' stroke-width='1'/%3E%3Ctext x='2' y='14' font-family='monospace' font-size='12' fill='%23FFC000'%3E%3E_%3C/text%3E%3C/svg%3E") 8 10, auto !important;
+}
+
+/* Matrix-style cursor */
+.skill-chip-matrix-cursor:hover {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cg fill='%23FFC000'%3E%3Crect x='0' y='0' width='2' height='2'/%3E%3Crect x='4' y='2' width='2' height='2'/%3E%3Crect x='8' y='0' width='2' height='2'/%3E%3Crect x='12' y='4' width='2' height='2'/%3E%3Crect x='16' y='2' width='2' height='2'/%3E%3Crect x='2' y='6' width='2' height='2'/%3E%3Crect x='6' y='8' width='2' height='2'/%3E%3Crect x='10' y='6' width='2' height='2'/%3E%3Crect x='14' y='8' width='2' height='2'/%3E%3Crect x='18' y='6' width='2' height='2'/%3E%3C/g%3E%3C/svg%3E") 10 10, auto !important;
+}
+
+/* Enhance hover effect for skill chips with poppers */
+.cv-chip:hover .skill-info-icon {
+  opacity: 1 !important;
+  transform: scale(1.1);
+}
+
+.skill-popper-container:hover .cv-chip {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 192, 0, 0.15);
+}
+
+/* Animation for popper appearance */
+@keyframes skillPopperSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.skill-popper-paper {
+  animation: skillPopperSlideIn 0.2s ease-out;
 }
 
 

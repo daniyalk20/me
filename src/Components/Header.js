@@ -98,18 +98,18 @@ function Header() {
                     }}
                 >
                     <MenuItem component="a" href="#hero">Home</MenuItem>
-                    <MenuItem component="a" href="#cv">CV</MenuItem>
-                    <MenuItem component="a" href="#projects">Project</MenuItem>
-                    <MenuItem component="a" href="#blogs">Blogs</MenuItem>
+                    <MenuItem component="a" href="#cv">Resume</MenuItem>
+                    <MenuItem component="a" href="#projects">Projects</MenuItem>
+                    <MenuItem component="a" href="#Writings">Writings</MenuItem>
                     <MenuItem component="a" href="#gallery">Gallery</MenuItem>
                 </Menu>
             </div>
 
             <div className="menu_large menu_style" direction="row" spacing={1}>
                 <a href="#hero">Home</a>
-                <a href="#cv">CV</a>
-                <a href="#projects">Project</a>
-                <a href="#blogs">Blogs</a>
+                <a href="#cv">Resume</a>
+                <a href="#projects">Projects</a>
+                <a href="#Writings">Writings</a>
                 <a href="#gallery">Gallery</a>
             </div>
         </Stack >

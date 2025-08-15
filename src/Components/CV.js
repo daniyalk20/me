@@ -42,13 +42,33 @@ import {
   LocationOn as LocationOnIcon,
 } from "@mui/icons-material";
 import cvData from "./cv.json";
+import SkillPopper from "./SubComponents/SkillPopper";
 import "./cv.css";
+import "./cursors.css";
 
 /* ---------- Theme tokens ---------- */
 const PRIMARY = "#FFC000";
 const SECONDARY = "#F5F5F5";
 const TEXT_LIGHT = "#E0E0E0";
 const TEXT_MUTED = "#B0B0B0";
+
+// Base font styles for Iceland consistency
+const icelandFont = {
+  fontFamily: '"Iceland", monospace',
+  fontOpticalSizing: 'auto',
+};
+
+const icelandBaseSize = {
+  fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.3rem' },
+};
+
+const icelandHeadingSize = {
+  fontSize: { xs: '1.4rem', sm: '1.6rem', md: '1.8rem' },
+};
+
+const icelandTitleSize = {
+  fontSize: { xs: '1.6rem', sm: '1.8rem', md: '2rem' },
+};
 
 const safeDate = (d) => (d && d !== "Present" ? new Date(d) : null);
 const formatDate = (dateStr) => {
@@ -103,8 +123,19 @@ function TabPanel({ children, value, index, ...other }) {
 /* ---------- Reusable UI bits ---------- */
 const SectionTitle = ({ icon: Icon, children }) => (
   <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 2 }}>
-    {Icon ? <Icon sx={{ color: PRIMARY }} /> : null}
-    <Typography variant="h5" sx={{ color: PRIMARY, fontWeight: 800 }}>{children}</Typography>
+    {Icon ? <Icon sx={{ color: PRIMARY, fontSize: { xs: '1.5rem', sm: '1.8rem' } }} /> : null}
+    <Typography 
+      variant="h5" 
+      sx={{ 
+        color: PRIMARY, 
+        fontWeight: 800,
+        ...icelandFont,
+        ...icelandTitleSize,
+        letterSpacing: '0.5px'
+      }}
+    >
+      {children}
+    </Typography>
   </Stack>
 );
 
@@ -169,6 +200,8 @@ export default function CV() {
     Languages: cvData?.skills?.languages || [],
   };
 
+  const skillDefinitions = cvData?.skillDefinitions || {};
+
   const projects = (cvData?.projects || []).map((p) => ({
     name: p?.name,
     role: p?.role,
@@ -196,7 +229,7 @@ export default function CV() {
     <Box className="cv-with-bg" sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", py: { xs: 2, md: 4 } }}>
       <Container maxWidth="lg" sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
         {/* Tabs */}
-        <Box className="cv-tabs-wrap cv-hide-in-print" sx={{ mb: 2 }}>
+        <Box className="cv-tabs-wrap cv-hide-in-print" sx={{ mb: 2, pt: 2 }}>
           <Tabs
             value={tab}
             onChange={(e, v) => setTab(v)}
@@ -215,6 +248,8 @@ export default function CV() {
                 color: TEXT_LIGHT,
                 border: `1px solid rgba(255,255,255,0.22)`,
                 transition: "all .2s ease",
+                fontSize: { xs: '0.9rem', sm: '1rem' },
+                ...icelandFont,
                 "&:hover": { transform: "translateY(-1px)", backgroundColor: "rgba(255,255,255,0.08)", borderColor: "rgba(255,255,255,0.35)", color: SECONDARY },
                 "&.Mui-selected": { color: "#111", backgroundColor: PRIMARY, borderColor: PRIMARY },
               },
@@ -235,15 +270,15 @@ export default function CV() {
             <TabPanel value={tab} index={0}>
               {/* Hero */}
               <Box sx={{ background: 'linear-gradient(135deg, rgba(255,192,0,0.1) 0%, rgba(0,255,255,0.05) 100%)', border: '2px solid rgba(255,192,0,0.3)', borderRadius: '2rem', p: 4, mb: 3, position: 'relative', overflow: 'hidden', '&::before': { content: '""', position: 'absolute', inset: 0, background: 'repeating-linear-gradient(90deg, transparent, transparent 98px, rgba(255,192,0,0.05) 100px)', pointerEvents: 'none' } }}>
-                <Box sx={{ position: 'absolute', top: 15, right: 25, fontFamily: '"Iceland", monospace', fontSize: { xs: '0.8rem', sm: '0.9rem' }, color: 'rgba(255,192,0,0.3)', letterSpacing: '2px', userSelect: 'none' }}>01001000 01100101 01101100 01101100 01101111</Box>
-                <Typography variant="h2" sx={{ fontFamily: '"Iceland", monospace', fontWeight: 800, mb: 1.5, color: PRIMARY, textShadow: '0 0 10px rgba(255,192,0,0.5)', letterSpacing: '1px', fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' } }}>{personal.name}</Typography>
+                <Box sx={{ position: 'absolute', top: 15, right: 25, fontFamily: '"Iceland", monospace', fontSize: { xs: '0.9rem', sm: '1rem' }, color: 'rgba(255,192,0,0.3)', letterSpacing: '2px', userSelect: 'none' }}>01001000 01100101 01101100 01101100 01101111</Box>
+                <Typography variant="h2" sx={{ fontFamily: '"Iceland", monospace', fontWeight: 800, mb: 1.5, color: PRIMARY, textShadow: '0 0 10px rgba(255,192,0,0.5)', letterSpacing: '1px', fontSize: { xs: '2.8rem', sm: '3.5rem', md: '4rem' } }}>{personal.name}</Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                  <CodeIcon sx={{ color: PRIMARY, mr: 1.5, fontSize: '1.8rem' }} />
-                  <Typography variant="h4" sx={{ fontFamily: '"Iceland", monospace', color: SECONDARY, letterSpacing: '0.5px', fontWeight: 600, fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' } }}>{personal.role}</Typography>
+                  <CodeIcon sx={{ color: PRIMARY, mr: 1.5, fontSize: '2rem' }} />
+                  <Typography variant="h4" sx={{ fontFamily: '"Iceland", monospace', color: SECONDARY, letterSpacing: '0.5px', fontWeight: 600, fontSize: { xs: '1.8rem', sm: '2rem', md: '2.3rem' } }}>{personal.role}</Typography>
                 </Box>
                 {personal.summary && (
                   <Box sx={{ background: 'rgba(0,0,0,0.3)', borderLeft: '4px solid ' + PRIMARY, p: 3, borderRadius: '0.5rem', fontFamily: '"Iceland", sans-serif' }}>
-                    <Typography variant="h6" sx={{ lineHeight: 1.8, color: TEXT_LIGHT, fontSize: { xs: '1.05rem', sm: '1.2rem', md: '1.3rem' }, fontFamily: '"Iceland", sans-serif', fontWeight: 400 }}>{personal.summary}</Typography>
+                    <Typography variant="h6" sx={{ lineHeight: 1.8, color: TEXT_LIGHT, fontSize: { xs: '1.2rem', sm: '1.35rem', md: '1.5rem' }, fontFamily: '"Iceland", sans-serif', fontWeight: 400 }}>{personal.summary}</Typography>
                   </Box>
                 )}
 
@@ -282,8 +317,9 @@ export default function CV() {
       sx={{
         color: PRIMARY,
         ml: 1,
-        fontSize: { xs: '1rem', sm: '1.15rem' },
+        fontSize: { xs: '1.1rem', sm: '1.25rem' },
         letterSpacing: '0.5px',
+        ...icelandFont,
       }}
     >
       ~/contact
@@ -302,6 +338,8 @@ export default function CV() {
           color: PRIMARY,
           fontWeight: 600,
           borderRadius: '2rem',
+          ...icelandFont,
+          ...icelandBaseSize,
         }}
       />
     )}
@@ -317,6 +355,8 @@ export default function CV() {
           textTransform: 'none',
           borderRadius: '2rem',
           '&:hover': { bgcolor: '#ffd84d' },
+          ...icelandFont,
+          ...icelandBaseSize,
         }}
       >
         {personal.contact.email}
@@ -334,6 +374,8 @@ export default function CV() {
           textTransform: 'none',
           borderRadius: '2rem',
           '&:hover': { bgcolor: '#ffd84d' },
+          ...icelandFont,
+          ...icelandBaseSize,
         }}
       >
         {personal.contact.phone}
@@ -353,6 +395,8 @@ export default function CV() {
           textTransform: 'none',
           borderRadius: '2rem',
           '&:hover': { borderColor: '#ffd84d', color: '#ffd84d' },
+          ...icelandFont,
+          ...icelandBaseSize,
         }}
       >
         {personal.contact.github.replace('https://github.com/', '')}
@@ -372,6 +416,8 @@ export default function CV() {
           textTransform: 'none',
           borderRadius: '2rem',
           '&:hover': { borderColor: '#ffd84d', color: '#ffd84d' },
+          ...icelandFont,
+          ...icelandBaseSize,
         }}
       >
         LinkedIn Profile
@@ -394,21 +440,21 @@ export default function CV() {
                       <Card sx={{ ...cardSx, flex: 1, borderLeft: `3px solid ${PRIMARY}` }}>
                         <CardContent>
                           <Stack direction={{ xs: "column", sm: "row" }} justifyContent="space-between" alignItems={{ xs: "flex-start", sm: "center" }} spacing={0.5} sx={{ mb: 0.5 }}>
-                            <Typography variant="h6" sx={{ fontWeight: 700, color: SECONDARY }}>{e.position}</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 700, color: SECONDARY, ...icelandFont, ...icelandHeadingSize }}>{e.position}</Typography>
                             <Stack direction="row" spacing={1} alignItems="center">
                               <CalendarTodayIcon fontSize="small" sx={{ color: TEXT_MUTED }} />
-                              <Typography variant="body2" sx={{ color: TEXT_MUTED }}>{e.period}</Typography>
+                              <Typography variant="body2" sx={{ color: TEXT_MUTED, ...icelandFont, ...icelandBaseSize }}>{e.period}</Typography>
                             </Stack>
                           </Stack>
                           <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
                             <BusinessIcon fontSize="small" sx={{ color: TEXT_LIGHT }} />
-                            <Typography variant="body2" sx={{ fontWeight: 600, color: TEXT_LIGHT }}>{e.company}</Typography>
-                            {e.location && (<><Typography variant="body2" sx={{ color: TEXT_MUTED }}>•</Typography><Typography variant="body2" sx={{ color: TEXT_MUTED }}>{e.location}</Typography></>)}
+                            <Typography variant="body2" sx={{ fontWeight: 600, color: TEXT_LIGHT, ...icelandFont, ...icelandBaseSize }}>{e.company}</Typography>
+                            {e.location && (<><Typography variant="body2" sx={{ color: TEXT_MUTED, ...icelandFont }}>•</Typography><Typography variant="body2" sx={{ color: TEXT_MUTED, ...icelandFont, ...icelandBaseSize }}>{e.location}</Typography></>)}
                           </Stack>
                           {e.highlights.length > 0 && (
                             <Box component="ul" className="cv-bullets" sx={{ pl: 2, mb: 1.5 }}>
                               {e.highlights.map((h, idx) => (
-                                <Typography key={idx} component="li" variant="body2" sx={{ mb: 0.5, color: TEXT_LIGHT }}>{h}</Typography>
+                                <Typography key={idx} component="li" variant="body2" sx={{ mb: 0.5, color: TEXT_LIGHT, ...icelandFont, ...icelandBaseSize }}>{h}</Typography>
                               ))}
                             </Box>
                           )}
@@ -435,21 +481,21 @@ export default function CV() {
                   <Card key={i} sx={{ ...cardSx, background: "rgba(255,255,255,0.05)" }}>
                     <CardContent>
                       <Stack direction={{ xs: "column", sm: "row" }} justifyContent="space-between" alignItems={{ xs: "flex-start", sm: "center" }} spacing={0.5} sx={{ mb: 0.5 }}>
-                        <Typography variant="h6" sx={{ fontWeight: 700, color: SECONDARY }}>{p.name}</Typography>
+                        <Typography variant="h6" sx={{ fontWeight: 700, color: SECONDARY, ...icelandFont, ...icelandHeadingSize }}>{p.name}</Typography>
                         {(p.period || p.role) && (
-                          <Typography variant="body2" sx={{ color: TEXT_MUTED }}>{[p.role, p.period].filter(Boolean).join(" • ")}</Typography>
+                          <Typography variant="body2" sx={{ color: TEXT_MUTED, ...icelandFont, ...icelandBaseSize }}>{[p.role, p.period].filter(Boolean).join(" • ")}</Typography>
                         )}
                       </Stack>
                       {p.highlights.length > 0 && (
                         <Box component="ul" className="cv-bullets" sx={{ pl: 2, mb: 1.5 }}>
                           {p.highlights.map((h, idx) => (
-                            <Typography key={idx} component="li" variant="body2" sx={{ mb: 0.5, color: TEXT_LIGHT }}>{h}</Typography>
+                            <Typography key={idx} component="li" variant="body2" sx={{ mb: 0.5, color: TEXT_LIGHT, ...icelandFont, ...icelandBaseSize }}>{h}</Typography>
                           ))}
                         </Box>
                       )}
                       <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mb: 1 }}>
                         {p.technologies.map((t, idx) => (
-                          <Chip key={idx} label={t} size="small" variant="outlined" sx={{ borderColor: PRIMARY, color: TEXT_LIGHT }} />
+                          <Chip key={idx} label={t} size="small" variant="outlined" sx={{ borderColor: PRIMARY, color: TEXT_LIGHT, fontSize: { xs: '0.8rem', sm: '0.85rem' }, ...icelandFont }} />
                         ))}
                       </Stack>
                       {p.link && (
@@ -473,10 +519,37 @@ export default function CV() {
                   <Grid item xs={12} sm={6} key={cat}>
                     <Card sx={{ ...cardSx, background: "rgba(255,255,255,0.05)" }}>
                       <CardContent>
-                        <Typography variant="subtitle1" sx={{ fontWeight: 800, mb: 1, color: SECONDARY }}>{cat}</Typography>
-                        <Stack direction="row" spacing={1} flexWrap="wrap">
+                        <Typography variant="subtitle1" sx={{ fontWeight: 800, mb: 1, color: SECONDARY, ...icelandFont, ...icelandHeadingSize }}>{cat}</Typography>
+                        <Stack direction="row" spacing={1.5} flexWrap="wrap" useFlexGap sx={{ gap: '8px 12px' }}>
                           {arr.map((s, i) => (
-                            <Chip key={i} label={s} size="small" className="cv-chip cv-chip--outline" sx={{ borderColor: PRIMARY, color: TEXT_LIGHT }} />
+                            <SkillPopper key={i} skill={s} definition={skillDefinitions[s]}>
+                              <Chip 
+                                label={s} 
+                                size="medium" 
+                                className="cv-chip cv-chip--outline"
+                                sx={{ 
+                                  borderColor: PRIMARY, 
+                                  color: TEXT_LIGHT,
+                                  transition: 'all 0.2s ease-in-out',
+                                  fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.25rem' },
+                                  fontWeight: 600,
+                                  py: 0.5,
+                                  px: 1.5,
+                                  height: { xs: '36px', sm: '40px' },
+                                  borderWidth: '2px',
+                                  ...icelandFont,
+                                  '& .MuiChip-label': {
+                                    padding: '0 8px',
+                                  },
+                                  '&:hover': {
+                                    borderColor: '#ffd84d',
+                                    backgroundColor: 'rgba(255, 192, 0, 0.15)',
+                                    transform: skillDefinitions[s] ? 'translateY(-2px) scale(1.02)' : 'none',
+                                    boxShadow: skillDefinitions[s] ? '0 6px 20px rgba(255, 192, 0, 0.25)' : 'none',
+                                  }
+                                }} 
+                              />
+                            </SkillPopper>
                           ))}
                         </Stack>
                       </CardContent>
@@ -494,23 +567,23 @@ export default function CV() {
                   <Card key={i} sx={{ ...cardSx, background: "rgba(255,255,255,0.05)" }}>
                     <CardContent>
                       <Stack direction={{ xs: "column", sm: "row" }} justifyContent="space-between" alignItems={{ xs: "flex-start", sm: "center" }} spacing={0.5} sx={{ mb: 0.5 }}>
-                        <Typography variant="h6" sx={{ fontWeight: 700, color: SECONDARY }}>{e.degree}</Typography>
+                        <Typography variant="h6" sx={{ fontWeight: 700, color: SECONDARY, ...icelandFont, ...icelandHeadingSize }}>{e.degree}</Typography>
                         <Stack direction="row" spacing={1} alignItems="center">
                           <CalendarTodayIcon fontSize="small" sx={{ color: TEXT_MUTED }} />
-                          <Typography variant="body2" sx={{ color: TEXT_MUTED }}>{e.period}</Typography>
+                          <Typography variant="body2" sx={{ color: TEXT_MUTED, ...icelandFont, ...icelandBaseSize }}>{e.period}</Typography>
                         </Stack>
                       </Stack>
                       <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
                         <SchoolIcon fontSize="small" sx={{ color: TEXT_LIGHT }} />
-                        <Typography variant="body2" sx={{ fontWeight: 600, color: TEXT_LIGHT }}>{e.institution}</Typography>
-                        {e.location && (<><Typography variant="body2" sx={{ color: TEXT_MUTED }}>•</Typography><Typography variant="body2" sx={{ color: TEXT_MUTED }}>{e.location}</Typography></>)}
+                        <Typography variant="body2" sx={{ fontWeight: 600, color: TEXT_LIGHT, ...icelandFont, ...icelandBaseSize }}>{e.institution}</Typography>
+                        {e.location && (<><Typography variant="body2" sx={{ color: TEXT_MUTED, ...icelandFont }}>•</Typography><Typography variant="body2" sx={{ color: TEXT_MUTED, ...icelandFont, ...icelandBaseSize }}>{e.location}</Typography></>)}
                       </Stack>
                       {(e.gpa || e.focus || e.school) && (
                         <Stack direction="row" spacing={1} flexWrap="wrap">
-                          {e.focus && <Chip label={`Focus: ${e.focus}`} size="small" sx={{ bgcolor: "rgba(255,255,255,0.12)", color: TEXT_LIGHT }} />}
-                          {e.school && <Chip label={e.school} size="small" variant="outlined" sx={{ borderColor: PRIMARY, color: TEXT_LIGHT }} />}
+                          {e.focus && <Chip label={`Focus: ${e.focus}`} size="small" sx={{ bgcolor: "rgba(255,255,255,0.12)", color: TEXT_LIGHT, fontSize: { xs: '0.8rem', sm: '0.85rem' }, ...icelandFont }} />}
+                          {e.school && <Chip label={e.school} size="small" variant="outlined" sx={{ borderColor: PRIMARY, color: TEXT_LIGHT, fontSize: { xs: '0.8rem', sm: '0.85rem' }, ...icelandFont }} />}
                           {e.gpa && (
-                            <Chip icon={<GradeIcon sx={{ color: TEXT_LIGHT }} />} label={`GPA: ${e.gpa}`} size="small" variant="outlined" sx={{ borderColor: PRIMARY, color: TEXT_LIGHT }} />
+                            <Chip icon={<GradeIcon sx={{ color: TEXT_LIGHT }} />} label={`GPA: ${e.gpa}`} size="small" variant="outlined" sx={{ borderColor: PRIMARY, color: TEXT_LIGHT, fontSize: { xs: '0.8rem', sm: '0.85rem' }, ...icelandFont }} />
                           )}
                         </Stack>
                       )}
@@ -528,8 +601,8 @@ export default function CV() {
                   <Stack spacing={1.25}>
                     {publications.map((p, i) => (
                       <Stack key={i} spacing={0.25}>
-                        <Typography variant="body1" sx={{ fontWeight: 700, color: SECONDARY }}>{p.title}</Typography>
-                        <Typography variant="body2" sx={{ color: TEXT_MUTED }}>{[p.venue, p.date].filter(Boolean).join(" • ")}</Typography>
+                        <Typography variant="body1" sx={{ fontWeight: 700, color: SECONDARY, ...icelandFont, ...icelandHeadingSize }}>{p.title}</Typography>
+                        <Typography variant="body2" sx={{ color: TEXT_MUTED, ...icelandFont, ...icelandBaseSize }}>{[p.venue, p.date].filter(Boolean).join(" • ")}</Typography>
                       </Stack>
                     ))}
                   </Stack>
@@ -541,12 +614,12 @@ export default function CV() {
 
         {/* Print-only sequential content */}
         <Box className="cv-show-in-print" sx={{ display: "none", mt: 2 }}>
-          <Typography variant="h5" sx={{ fontWeight: 800, mb: 1 }}>{personal.name} — {personal.role}</Typography>
+          <Typography variant="h5" sx={{ fontWeight: 800, mb: 1, ...icelandFont, ...icelandTitleSize }}>{personal.name} — {personal.role}</Typography>
           <Divider sx={{ mb: 2 }} />
-          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>About</Typography>
-          <Typography variant="body1" sx={{ mb: 1.5 }}>{personal.summary || "Results-driven engineer focused on impact."}</Typography>
-          <Typography variant="body2" sx={{ mb: 2 }}>{[personal.contact.email, personal.contact.phone, personal.contact.location].filter(Boolean).join(" • ")}</Typography>
-          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>Experience</Typography>
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, ...icelandFont, ...icelandHeadingSize }}>About</Typography>
+          <Typography variant="body1" sx={{ mb: 1.5, ...icelandFont, ...icelandBaseSize }}>{personal.summary || "Results-driven engineer focused on impact."}</Typography>
+          <Typography variant="body2" sx={{ mb: 2, ...icelandFont, fontSize: { xs: '1rem', sm: '1.1rem' } }}>{[personal.contact.email, personal.contact.phone, personal.contact.location].filter(Boolean).join(" • ")}</Typography>
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, ...icelandFont, ...icelandHeadingSize }}>Experience</Typography>
           {experience.map((e, i) => (
             <Box key={i} sx={{ mb: 1 }}>
               <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>{e.position} — {e.company}</Typography>
