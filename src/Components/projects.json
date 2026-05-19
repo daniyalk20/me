@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Pneumonia Diagnosis Using Deep Learning",
+        "description": "Built a TensorFlow model to diagnose pneumonia from X-ray images. Deployed with a Django REST API and Vue.js frontend, achieving ~92% accuracy.",
+        "tech": ["TensorFlow", "Django", "Vue.js", "REST API"],
+        "github": "https://github.com/daniyalk20",
+        "live": "",
+        "thumbnail": ""
+    },
+    {
+        "title": "AI Manufacturing Decision Tool",
+        "description": "AI-driven decision-making tool for manufacturing process selection using LangChain and agentic workflows with React.js frontend.",
+        "tech": ["LangChain", "React.js", "Django", "MySQL"],
+        "github": "https://github.com/daniyalk20",
+        "live": "",
+        "thumbnail": ""
+    },
+    {
+        "title": "Time Series Imputation Research",
+        "description": "Comparative study of imputation methods for time series data using deep learning models with PyTorch and TensorFlow.",
+        "tech": ["PyTorch", "TensorFlow", "Python"],
+        "github": "https://github.com/daniyalk20",
+        "live": "",
+        "thumbnail": ""
+    },
+    {
+        "title": "Portfolio Website",
+        "description": "Personal portfolio built with React.js featuring technical writings, project showcase, and responsive design.",
+        "tech": ["React.js", "MUI", "GitHub Pages"],
+        "github": "https://github.com/daniyalk20/me",
+        "live": "https://daniyalk20.github.io/me/",
+        "thumbnail": ""
+    }
+]

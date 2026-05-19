@@ -190,12 +190,12 @@ export default function Background({
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("width", "50");
     svg.setAttribute("height", "70");
-    svg.style.filter = "drop-shadow(0 0 8px rgba(255, 192, 0, 0.6)) drop-shadow(0 0 16px rgba(255, 192, 0, 0.3))";
+    svg.style.filter = "drop-shadow(0 0 8px rgba(200, 200, 200, 0.4)) drop-shadow(0 0 16px rgba(200, 200, 200, 0.2))";
 
     // Vertical line path (hand-drawn with subtle imperfections)
     const verticalPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
     verticalPath.setAttribute("d", "M25 5 Q25.3 15 24.8 25 Q25.2 35 24.9 45 Q25.1 55 25 65");
-    verticalPath.setAttribute("stroke", "rgba(255, 192, 0, 0.9)");
+    verticalPath.setAttribute("stroke", "rgba(200, 200, 200, 0.7)");
     verticalPath.setAttribute("stroke-width", "3");
     verticalPath.setAttribute("stroke-linecap", "round");
     verticalPath.setAttribute("fill", "none");
@@ -203,7 +203,7 @@ export default function Background({
     // Horizontal line path (hand-drawn with subtle imperfections)
     const horizontalPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
     horizontalPath.setAttribute("d", "M5 25 Q15 24.7 25 25.2 Q35 25.1 45 25");
-    horizontalPath.setAttribute("stroke", "rgba(255, 192, 0, 0.9)");
+    horizontalPath.setAttribute("stroke", "rgba(200, 200, 200, 0.7)");
     horizontalPath.setAttribute("stroke-width", "3");
     horizontalPath.setAttribute("stroke-linecap", "round");
     horizontalPath.setAttribute("fill", "none");
