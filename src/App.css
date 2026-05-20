@@ -811,11 +811,15 @@ a:hover {
 .cv-name {
   font-family: 'Calibri', 'Carlito', sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text-primary);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0 0 6px;
+}
+
+.cv-name strong {
+  font-weight: 700;
 }
 
 .cv-contact-bar {

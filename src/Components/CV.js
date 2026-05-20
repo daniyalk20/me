@@ -23,13 +23,13 @@ const skillLabels = {
 };
 
 function CV() {
-    const { name, contact, links, summary, experience, education, skills, publications } = cvData;
+    const { fname, lname, contact, links, summary, experience, education, skills, publications } = cvData;
 
     return (
         <div className="cv-section">
             {/* Resume Header */}
             <header className="cv-header">
-                <h1 className="cv-name">{name}</h1>
+                <h1 className="cv-name"><strong>{fname}</strong> {lname}</h1>
                 <div className="cv-contact-bar">
                     <span><a href={`mailto:${contact.email}`}>Email: {contact.email}</a></span>
                     <span><a href={links.github} target="_blank" rel="noopener noreferrer">GitHub: /daniyalk20</a></span>
