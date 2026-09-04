@@ -62,6 +62,7 @@ function Header() {
         { label: 'Home', id: 'hero' },
         { label: 'Resume', id: 'about' },
         { label: 'Projects', id: 'projects' },
+        { label: 'Writings', id: 'writings' },
     ];
 
     return (

@@ -75,8 +75,18 @@ function App() {
                 <Projects />
               </div>
             </section>
-            
-            {/* Writings and Gallery sections hidden for now */}
+
+            <section id="writings" className="section">
+              <div className="section-inner">
+                <div className="section-header">
+                  <h2 className="section-title">Technical Writings</h2>
+                  <hr className="section-divider" />
+                </div>
+                <WritingsList />
+              </div>
+            </section>
+
+            {/* Gallery section hidden for now */}
           </>
         } />
         <Route path="/writing/:slug" element={<Writing />} />
