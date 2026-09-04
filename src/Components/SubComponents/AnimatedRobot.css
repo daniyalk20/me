@@ -35,7 +35,7 @@
   border: 2px solid rgba(255,255,255,0.18);
   box-shadow:
     0 4px 10px -2px rgba(0,0,0,0.55),
-    0 0 0 3px rgba(255,192,0,0.22),
+    0 0 0 3px rgba(200,200,200,0.15),
     inset 3px 3px 6px rgba(255,255,255,0.35),
     inset -4px -5px 8px rgba(0,0,0,0.55);
 }
@@ -56,7 +56,7 @@
 /* Antenna */
 .antenna { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); height: 16px; width: 2px; }
 .antenna-stem { width: 2px; height: 14px; background: linear-gradient(#777,#333); margin: 0 auto; border-radius: 2px; }
-.antenna-tip { width: 8px; height: 8px; background: radial-gradient(circle, #fff4cc, #FFC000 70%, #b38600); border-radius: 50%; margin: -3px auto 0; box-shadow: 0 0 6px #FFC000; }
+.antenna-tip { width: 8px; height: 8px; background: radial-gradient(circle, #ffffff, #cccccc 70%, #888888); border-radius: 50%; margin: -3px auto 0; box-shadow: 0 0 6px #cccccc; }
 
 /* Eyes */
 .robot-eye {
@@ -103,7 +103,7 @@
 .robot.thinking .robot-head { animation: head-tilt 3s ease-in-out infinite; }
 .left-eye { left: 9px; }
 .right-eye { right: 9px; }
-.robot-eye.thinking { background: radial-gradient(circle at 40% 35%, #fff7c2, #ffd54f 60%, #dc9f00); box-shadow: 0 0 6px #ffd54f, 0 0 16px #FFC000; animation: thinking-blink 1.2s infinite, eye-sparkle 3.2s ease-in-out infinite; }
+.robot-eye.thinking { background: radial-gradient(circle at 40% 35%, #ffffff, #cccccc 60%, #888888); box-shadow: 0 0 6px #cccccc, 0 0 16px #aaaaaa; animation: thinking-blink 1.2s infinite, eye-sparkle 3.2s ease-in-out infinite; }
 
 /* Robot Mouth (compact LED panel) */
 .robot-mouth { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-family: "Courier New", Consolas, monospace; font-size: 9px; line-height: 1; padding: 0; margin: 0; background: none; border: none; box-shadow: none; width: auto; height: auto; color: #ffb680; letter-spacing: 1px; }
@@ -205,12 +205,12 @@
   -webkit-backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid rgba(255,255,255,0.25);
   background: linear-gradient(135deg, rgba(80,80,80,0.35), rgba(120,120,120,0.18));
-  box-shadow: 0 6px 30px -8px rgba(0,0,0,0.6), 0 0 0 2px rgba(255,192,0,0.15);
+  box-shadow: 0 6px 30px -8px rgba(0,0,0,0.6), 0 0 0 2px rgba(200,200,200,0.12);
 }
 .speech-bubble.typing { min-width: 100px; max-width: 120px; padding: 10px 12px; }
 .bubble-content { font-weight: 500; letter-spacing: 0.4px; text-align: left; }
 .bubble-arrow { position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 22px; height: 14px; overflow: hidden; }
-.bubble-arrow::after { content: ''; position: absolute; top: -8px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 18px; height: 18px; background: linear-gradient(135deg, rgba(120,120,120,0.45), rgba(160,160,160,0.25)); border-left: 1px solid rgba(255,255,255,0.25); border-top: 1px solid rgba(255,255,255,0.25); box-shadow: 0 0 0 2px rgba(255,192,0,0.18); }
+.bubble-arrow::after { content: ''; position: absolute; top: -8px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 18px; height: 18px; background: linear-gradient(135deg, rgba(120,120,120,0.45), rgba(160,160,160,0.25)); border-left: 1px solid rgba(255,255,255,0.25); border-top: 1px solid rgba(255,255,255,0.25); box-shadow: 0 0 0 2px rgba(200,200,200,0.12); }
 
 /* Typing dots */
 .typing-dots { display: flex; gap: 4px; align-items: center; justify-content: center; }

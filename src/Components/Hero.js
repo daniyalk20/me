@@ -1,31 +1,25 @@
-import React, { useEffect } from 'react';
-import AnimatedRobot from './SubComponents/AnimatedRobot';
+import React from 'react';
 
 function Hero() {
-    // Parallax background effect
-    useEffect(() => {
-        const handleScroll = () => {
-            const hero = document.querySelector('.hero');
-            if (!hero) return;
-            const scrollPosition = window.scrollY;
-            hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-        // Robot now sources messages internally from cv.json
+    const heroStyle = {
+        backgroundImage: `url(${process.env.PUBLIC_URL}/assets/hero.png)`,
+    };
 
     return (
-        <div id='hero' className='hero'>
-            <div style={{ fontSize: '4rem', lineHeight: 1.1 }}>
-                Shalom, I’m Daniyal <span className="gradient-text" style={{ color: '#FF5733' }}>Khan</span>
+        <div id="hero" className="hero" style={heroStyle}>
+            <div className="hero-inner">
+                <div className="hero-content">
+                    <h1 className="hero-title">Daniyal Khan</h1>
+                    <p className="hero-subtitle">
+                        Software Engineer specializing in full-stack development,
+                        high-performance visualization, and scalable applications.
+                    </p>
+                    <div className="hero-cta">
+                        <a href="#about" className="btn btn-primary">View Resume</a>
+                        <a href="#projects" className="btn btn-outline">See Projects</a>
+                    </div>
+                </div>
             </div>
-            <hr style={{ width: '50px', border: '2px solid white', margin: '1rem 0' }} />
-            <div style={{ fontSize: '2.2rem', maxWidth: '900px' }}>
-                Software Engineer, Deep Learning enthusiast, and CURIOUS mind.
-            </div>
-                {/* <AnimatedRobot /> */}
         </div>
     );
 }

@@ -1,21 +1,22 @@
 {
-    "name": "Daniyal Khan",
+    "fname": "Daniyal",
+    "lname": "Khan",
     "contact": {
         "email": "itsdaniyalk7@gmail.com",
         "phone": "+1 (330) 550-1422"
     },
     "links": {
         "github": "https://github.com/daniyalk20",
-        "linkedin": "https://www.linkedin.com/in/daniyalk20"
+        "linkedin": "https://www.linkedin.com/in/daniyalk20",
+        "resume": "https://drive.google.com/file/d/1kgE_eE4DSQxEIiGx4jkWoUWea-EtBSGE/view?usp=sharing"
     },
-    "summary": "Software Engineer with expertise in AI-driven applications, full-stack development (React.js, Django, REST APIs), and machine learning; experienced with algorithms for advanced manufacturing and agile workflows.",
+    "summary": "Software Engineer specializing in full-stack development, high-performance visualization systems, and scalable applications. Experienced in Rust, React.js, Django, GPU rendering, and WebAssembly (WASM) for data-intensive engineering and visualization workflows.",
     "education": [
         {
             "institution": "Youngstown State University",
             "location": "Youngstown, OH, USA",
             "school": "School of Computer Science, Information, and Engineering Technology",
             "degree": "Master of Computing and Information Systems",
-            "focus": "Machine Learning",
             "gpa": "3.83/4.0",
             "start_date": "2022-01",
             "end_date": "2023-12"
@@ -37,10 +38,12 @@
             "start_date": "2024-01",
             "end_date": "Present",
             "highlights": [
-                "Developing AI-driven decision-making tools for manufacturing process selection using LangChain and agentic workflows.",
-                "Building full-stack applications with React.js, Django, REST APIs, and MySQL.",
-                "Implementing agile workflows to optimize software development.",
-                "Designing algorithms for parametric analysis in Laser Powder Bed Fusion (LPBF)."
+                "Building full-stack applications using React.js, Django, REST APIs, and MySQL.",
+                "Developing GPU-optimized desktop and browser-based WebAssembly (WASM) visualization software in Rust for large-scale 2D and 3D engineering datasets.",
+                "Implementing high-performance rendering pipelines using wgpu and egui for interactive visualization of geometric, large point cloud (PCD), and mesh data.",
+                "Designing multithreaded workflows to optimize rendering and data-processing performance for large datasets.",
+                "Designing UI/UX workflows for engineering visualization and analysis tools.",
+                "Integrating and extending open-source technologies to improve visualization and system capabilities."
             ]
         },
         {
@@ -50,7 +53,7 @@
             "start_date": "2023-06",
             "end_date": "2023-08",
             "highlights": [
-                "Developed point cloud data refinement and visualization tools for post-process monitoring in LPBF manufacturing.",
+                "Developed Point Cloud data refinement and visualization tools for post-process monitoring in LPBF manufacturing.",
                 "Optimized SDLC and enhanced technical documentation of algorithms using JIRA."
             ]
         },
@@ -62,20 +65,10 @@
             "start_date": "2022-01",
             "end_date": "2023-12",
             "highlights": [
-                "Conducted literature review on missing data imputation methods for time series.",
-                "Refined training models and data to optimize the imputation method.",
-                "Implemented and tested deep learning models using PyTorch and TensorFlow."
-            ]
-        },
-        {
-            "company": "The Rich Center for Autism (Youngstown State University)",
-            "location": "Youngstown, OH, USA",
-            "title": "Student Assistant",
-            "start_date": "2022-04",
-            "end_date": "2022-08",
-            "highlights": [
-                "Assisted students with Autism by adapting computing curriculum for ASD.",
-                "Collected behavior data related to curriculum changes and analyzed results."
+                "Researched and evaluated missing-data imputation techniques for multivariate time-series datasets.",
+                "Refined deep learning models and preprocessing workflows to improve imputation accuracy and training performance.",
+                "Implemented and tested deep learning models using PyTorch and TensorFlow.",
+                "Utilized high-performance computing (HPC) and supercomputing resources for large-scale data cleaning and model training."
             ]
         },
         {
@@ -85,34 +78,46 @@
             "start_date": "2020-06",
             "end_date": "2021-11",
             "highlights": [
-                "Designed/developed UI and managed data flow using Vue.js for clearinghouses.",
-                "Built and maintained server-side functions, REST APIs, and databases using Java, Spring Boot, .NET Core, C#, and MySQL.",
-                "Worked with EHR/EMR and EDI documents per HIPAA transactions."
+                "Developed full-stack healthcare applications using Vue.js, Java Spring Boot, .NET Core, C#, REST APIs, and MySQL.",
+                "Designed responsive UI components and implemented client-side state and data-flow management for healthcare clearinghouse systems.",
+                "Built and maintained backend services and HIPAA-compliant EDI transaction workflows for EHR, EMR, and healthcare data exchange systems."
             ]
         }
     ],
     "skills": {
         "programming": [
             "Python",
-            "C++"
+            "Rust",
+            "JavaScript",
+            "C#"
         ],
         "frameworks": [
-            "Django REST framework",
             "React.js",
-            "LangChain",
-            "LangGraph"
+            "Django REST Framework",
+            "egui",
+            "wgpu"
         ],
         "cloud": [
-            "AWS (Intermediate)"
+            "AWS",
+            "Git",
+            "Jira",
+            "HPC/Supercomputing"
         ],
         "web": [
+            "REST APIs",
+            "WebAssembly (WASM)",
             "HTML",
-            "CSS",
-            "JavaScript",
-            "REST API"
+            "CSS"
         ],
         "databases": [
             "MySQL"
+        ],
+        "systems": [
+            "GPU Rendering",
+            "Parallel Processing",
+            "Multithreading",
+            "Data Visualization",
+            "2D/3D Graphics"
         ],
         "languages": [
             "English",
@@ -122,17 +127,27 @@
     },
     "skillDefinitions": {
         "Python": "A versatile programming language used for web development, data analysis, artificial intelligence, and automation. Perfect for creating websites, analyzing business data, and building smart applications.",
-        "C++": "A powerful programming language used for building high-performance software like games, desktop applications, and system software. Essential for creating fast, efficient programs.",
-        "Django REST framework": "A toolkit for building web APIs that allows different software applications to communicate with each other. Enables mobile apps and websites to share data seamlessly.",
+        "Rust": "A systems programming language focused on performance, memory safety, and concurrency. Ideal for building high-performance visualization software, WebAssembly applications, and GPU-accelerated tools.",
+        "JavaScript": "A programming language that makes websites interactive and dynamic. Powers features like dropdown menus, form validation, and real-time content updates.",
+        "C#": "A modern, object-oriented programming language used for building enterprise applications, web services, and desktop software on the .NET platform.",
         "React.js": "A popular library for building interactive user interfaces and websites. Creates responsive, fast-loading web applications that work great on both desktop and mobile devices.",
-        "LangChain": "A framework for developing applications powered by artificial intelligence and language models. Used to build chatbots, content generators, and smart document processing systems.",
-        "LangGraph": "A framework for building applications that leverage graph data structures and algorithms. Ideal for creating knowledge graphs, recommendation systems, and social network analysis tools.",
-        "AWS (Intermediate)": "Amazon's cloud computing platform that provides scalable web hosting, data storage, and computing power. Allows businesses to run applications without maintaining physical servers.",
+        "Django REST Framework": "A toolkit for building web APIs that allows different software applications to communicate with each other. Enables mobile apps and websites to share data seamlessly.",
+        "egui": "An immediate-mode GUI library for Rust, used for building responsive desktop and web application interfaces with minimal boilerplate code.",
+        "wgpu": "A cross-platform graphics API in Rust for GPU-accelerated rendering. Enables high-performance 2D/3D visualization in both native and WebAssembly environments.",
+        "AWS": "Amazon's cloud computing platform that provides scalable web hosting, data storage, and computing power. Allows businesses to run applications without maintaining physical servers.",
+        "Git": "A distributed version control system for tracking code changes, enabling collaboration, branching, and maintaining project history across development teams.",
+        "Jira": "A project management and issue tracking tool used for agile software development workflows, sprint planning, and team collaboration.",
+        "HPC/Supercomputing": "High-performance computing infrastructure for running large-scale computational tasks, model training, and data processing that exceeds standard computing capabilities.",
+        "REST APIs": "A set of rules for how different software applications communicate over the internet. Allows mobile apps to get data from servers and enables integration between different services.",
+        "WebAssembly (WASM)": "A binary instruction format that enables near-native performance for web applications. Allows languages like Rust to run in the browser for compute-intensive tasks.",
         "HTML": "The foundation language for creating web pages and websites. Structures content like text, images, and links that you see when browsing the internet.",
         "CSS": "The styling language that makes websites look beautiful by controlling colors, fonts, layouts, and animations. Transforms plain web pages into visually appealing designs.",
-        "JavaScript": "A programming language that makes websites interactive and dynamic. Powers features like dropdown menus, form validation, and real-time content updates.",
-        "REST API": "A set of rules for how different software applications communicate over the internet. Allows mobile apps to get data from servers and enables integration between different services.",
         "MySQL": "A database system that stores and organizes information for websites and applications. Manages data like user accounts, product catalogs, and business records efficiently.",
+        "GPU Rendering": "Using graphics processing units to accelerate the rendering of 2D/3D visualizations, enabling real-time interaction with large engineering datasets.",
+        "Parallel Processing": "A computing approach that executes multiple tasks simultaneously to improve performance for data-intensive operations and rendering workloads.",
+        "Multithreading": "A programming technique that runs multiple threads concurrently within a single process, optimizing CPU utilization for complex computational tasks.",
+        "Data Visualization": "The practice of representing data graphically to reveal patterns, trends, and insights. Essential for engineering analysis and scientific communication.",
+        "2D/3D Graphics": "Computer graphics techniques for rendering two-dimensional and three-dimensional visual content, used in engineering visualization and interactive applications.",
         "English": "International language of business and technology, enabling global communication and collaboration in professional environments.",
         "Hindi": "Native language proficiency enabling effective communication with Hindi-speaking clients and team members, expanding market reach in India.",
         "Urdu": "Additional language skill that enhances communication capabilities and cultural understanding in diverse professional settings."
@@ -157,17 +172,12 @@
         {
             "title": "Manufacturability Analysis of Laser Powder Bed Fusion using Machine Learning",
             "venue": "Youngstown State University",
-            "date": "2023-10"
+            "date": "2024-12"
         },
         {
             "title": "A Comparative Study of Imputation Methods for Time Series Data",
             "venue": "The Florida Artificial Intelligence Research Society",
             "date": "2023-05"
-        },
-        {
-            "title": "Security Threats and Technologies on the Internet of Things Systems",
-            "venue": "International Journal for Scientific Research & Development",
-            "date": "2019-07"
         }
     ]
 }

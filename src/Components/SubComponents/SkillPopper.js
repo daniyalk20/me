@@ -7,7 +7,7 @@ import {
   Box,
 } from '@mui/material';
 
-const PRIMARY = "#FFC000";
+const PRIMARY = "#ffffff";
 const TEXT_LIGHT = "#E0E0E0";
 
 // Iceland font consistency

@@ -144,7 +144,7 @@ function resolveCover(cover) {
 
 // Styled code block having background/border with copy button
 function PreBlock({ children }) {
-  const PRIMARY = "#FFC000";
+  const PRIMARY = "#ffffff";
   const [copied, setCopied] = useState(false);
   const codeContainerRef = useRef(null);
 
@@ -173,10 +173,10 @@ function PreBlock({ children }) {
             "linear-gradient(135deg, rgba(20, 24, 28, 0.97) 0%, rgba(30, 35, 40, 0.95) 100%)",
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
-          border: "1px solid rgba(255,192,0,0.25)",
+          border: "1px solid rgba(255,255,255,0.12)",
           borderRadius: "0.875rem",
           boxShadow:
-            "0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,192,0,0.12) inset",
+            "0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06) inset",
           position: "relative",
           color: "#E0E0E0",
           overflowX: "auto",
@@ -189,7 +189,7 @@ function PreBlock({ children }) {
             right: 0,
             height: "2px",
             background:
-              "linear-gradient(90deg, transparent, #FFC000, transparent)",
+              "linear-gradient(90deg, transparent, #ffffff, transparent)",
             borderRadius: "0.875rem 0.875rem 0 0",
           },
         }}
@@ -208,7 +208,7 @@ function PreBlock({ children }) {
             right: 8,
             color: PRIMARY,
             bgcolor: "rgba(0,0,0,0.35)",
-            border: "1px solid rgba(255,192,0,0.35)",
+            border: "1px solid rgba(255,255,255,0.2)",
             "&:hover": { bgcolor: "rgba(0,0,0,0.5)" },
           }}
         >
@@ -222,7 +222,7 @@ function PreBlock({ children }) {
 export default function Writing() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
-  const PRIMARY = "#FFC000";
+  const PRIMARY = "#ffffff";
 
   useEffect(() => {
     let cancelled = false;
@@ -324,8 +324,8 @@ export default function Writing() {
             variant="outlined"
             sx={{
               color: PRIMARY,
-              borderColor: "rgba(255,192,0,0.35)",
-              bgcolor: "rgba(255,192,0,0.10)",
+              borderColor: "rgba(255,255,255,0.15)",
+              bgcolor: "rgba(255,255,255,0.06)",
               fontFamily: BRAND_FONT,
               fontSize: "1rem",
               fontWeight: 400,
@@ -345,8 +345,8 @@ export default function Writing() {
             variant="outlined"
             sx={{
               color: PRIMARY,
-              borderColor: "rgba(255,192,0,0.35)",
-              bgcolor: "rgba(255,192,0,0.10)",
+              borderColor: "rgba(255,255,255,0.15)",
+              bgcolor: "rgba(255,255,255,0.06)",
               fontFamily: BRAND_FONT,
               fontSize: "1rem",
               fontWeight: 400,
@@ -362,8 +362,8 @@ export default function Writing() {
             variant="outlined"
             sx={{
               color: PRIMARY,
-              borderColor: "rgba(255,192,0,0.35)",
-              bgcolor: "rgba(255,192,0,0.10)",
+              borderColor: "rgba(255,255,255,0.15)",
+              bgcolor: "rgba(255,255,255,0.06)",
               fontFamily: BRAND_FONT,
               fontSize: "1rem",
               fontWeight: 400,
@@ -383,7 +383,7 @@ export default function Writing() {
               mr: 1, 
               mb: 1, 
               color: 'white', 
-              backgroundColor: 'rgba(255,192,0,0.10)',
+              backgroundColor: 'rgba(255,255,255,0.06)',
               fontFamily: BRAND_FONT,
               fontSize: "0.9rem",
               fontWeight: 400,
@@ -399,7 +399,7 @@ export default function Writing() {
           justifyContent: "center", 
           display: "flex", 
           flexDirection: "row", 
-          color: '#FFC000', 
+          color: '#ffffff', 
           marginBottom: 24,
           fontFamily: BRAND_FONT.replace(/"/g, ''),
           fontSize: "1.1rem",
@@ -484,7 +484,7 @@ export default function Writing() {
                   my: 4,
                   border: 'none',
                   height: '2px',
-                  background: 'linear-gradient(90deg, transparent, rgba(255,192,0,0.6), transparent)',
+                  background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)',
                   borderRadius: '1px',
                   position: 'relative',
                   '&::before': {
@@ -510,8 +510,8 @@ export default function Writing() {
                   pl: 3,
                   pr: 2,
                   py: 2,
-                  background: 'linear-gradient(135deg, rgba(255,192,0,0.08) 0%, rgba(30,35,40,0.15) 100%)',
-                  borderLeft: '4px solid rgba(255,192,0,0.6)',
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(30,35,40,0.15) 100%)',
+                  borderLeft: '4px solid rgba(255,255,255,0.4)',
                   borderRadius: '0 12px 12px 0',
                   fontStyle: 'italic',
                   fontSize: '1.35rem',
@@ -528,7 +528,7 @@ export default function Writing() {
                     left: '8px',
                     top: '-8px',
                     fontSize: '3rem',
-                    color: 'rgba(255,192,0,0.3)',
+                    color: 'rgba(255,255,255,0.15)',
                     fontFamily: 'serif',
                   }
                 }}
@@ -553,7 +553,7 @@ export default function Writing() {
                       content: '"▶"',
                       position: 'absolute',
                       left: '-20px',
-                      color: '#FFC000',
+                      color: '#ffffff',
                       fontSize: '0.8em',
                     },
                     '&:hover::before': {
@@ -586,7 +586,7 @@ export default function Writing() {
                       position: 'absolute',
                       left: '-25px',
                       top: '0',
-                      background: 'linear-gradient(135deg, #FFC000, #FFD700)',
+                      background: 'linear-gradient(135deg, #ffffff, #cccccc)',
                       color: '#000',
                       borderRadius: '50%',
                       width: '20px',
@@ -596,7 +596,7 @@ export default function Writing() {
                       justifyContent: 'center',
                       fontSize: '0.8em',
                       fontWeight: 600,
-                      border: '1px solid rgba(255,192,0,0.3)',
+                      border: '1px solid rgba(255,255,255,0.15)',
                     }
                   }
                 }}
@@ -613,7 +613,7 @@ export default function Writing() {
                   fontWeight: 400,
                   // Handle checkboxes for task lists
                   '& input[type="checkbox"]': {
-                    accentColor: '#FFC000',
+                    accentColor: '#ffffff',
                     marginRight: '8px',
                     transform: 'scale(1.2)',
                     cursor: 'pointer',
@@ -633,7 +633,7 @@ export default function Writing() {
                   borderSpacing: 0,
                   background: 'rgba(20,24,28,0.6)',
                   backdropFilter: 'blur(8px)',
-                  border: '1px solid rgba(255,192,0,0.2)',
+                  border: '1px solid rgba(255,255,255,0.2)',
                   borderRadius: '12px',
                   overflow: 'hidden',
                   boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
@@ -647,7 +647,7 @@ export default function Writing() {
               <Box
                 component="thead"
                 sx={{
-                  background: 'linear-gradient(135deg, rgba(255,192,0,0.15), rgba(255,192,0,0.08))',
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
                 }}
                 {...props}
               />
@@ -660,8 +660,8 @@ export default function Writing() {
                   textAlign: 'left',
                   fontFamily: BRAND_FONT,
                   fontWeight: 600,
-                  color: '#FFC000',
-                  borderBottom: '2px solid rgba(255,192,0,0.3)',
+                  color: '#ffffff',
+                  borderBottom: '2px solid rgba(255,255,255,0.2)',
                   fontSize: '1.1rem',
                 }}
                 {...props}
@@ -677,7 +677,7 @@ export default function Writing() {
                   borderBottom: '1px solid rgba(255,255,255,0.1)',
                   fontSize: '1.2rem',
                   '&:hover': {
-                    background: 'rgba(255,192,0,0.05)',
+                    background: 'rgba(255,255,255,0.05)',
                   }
                 }}
                 {...props}
@@ -691,7 +691,7 @@ export default function Writing() {
                     background: 'rgba(255,255,255,0.02)',
                   },
                   '& tr:hover': {
-                    background: 'rgba(255,192,0,0.08)',
+                    background: 'rgba(255,255,255,0.05)',
                     transition: 'background 0.2s ease',
                   }
                 }}
@@ -707,7 +707,7 @@ export default function Writing() {
                     px: 0.75,
                     py: 0.25,
                     borderRadius: "0.375rem",
-                    border: "1px solid rgba(255,192,0,0.35)",
+                    border: "1px solid rgba(255,255,255,0.15)",
                     bgcolor: "rgba(30,35,40,0.35)",
                     color: "#E0E0E0",
                     fontSize: "1.3rem",
@@ -736,7 +736,7 @@ export default function Writing() {
               <MuiLink 
                 href={href} 
                 sx={{ 
-                  color: "#FFC000", 
+                  color: "#ffffff", 
                   fontFamily: BRAND_FONT,
                   fontSize: "inherit",
                   fontWeight: 500,
@@ -746,10 +746,10 @@ export default function Writing() {
                   borderBottom: "2px solid transparent",
                   paddingBottom: "2px",
                   "&:hover": {
-                    color: "#FFD700",
-                    borderBottom: "2px solid rgba(255,192,0,0.6)",
+                    color: "#cccccc",
+                    borderBottom: "2px solid rgba(255,255,255,0.4)",
                     transform: "translateY(-1px)",
-                    textShadow: "0 0 8px rgba(255,192,0,0.4)",
+                    textShadow: "0 0 8px rgba(255,255,255,0.2)",
                   },
                   "&::after": {
                     content: '"↗"',
@@ -773,13 +773,13 @@ export default function Writing() {
                 component="em"
                 sx={{
                   fontStyle: 'italic',
-                  color: 'rgba(255,192,0,0.9)',
+                  color: 'rgba(255,255,255,0.9)',
                   fontFamily: BRAND_FONT,
                   position: 'relative',
                   '&::before, &::after': {
                     content: '"✦"',
                     fontSize: '0.7em',
-                    color: 'rgba(255,192,0,0.4)',
+                    color: 'rgba(255,255,255,0.4)',
                     margin: '0 2px',
                   }
                 }}
@@ -791,10 +791,10 @@ export default function Writing() {
                 component="strong"
                 sx={{
                   fontWeight: 700,
-                  color: '#FFC000',
+                  color: '#ffffff',
                   fontFamily: BRAND_FONT,
-                  textShadow: '0 0 4px rgba(255,192,0,0.3)',
-                  background: 'linear-gradient(135deg, rgba(255,192,0,0.1), transparent)',
+                  textShadow: '0 0 4px rgba(255,255,255,0.15)',
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.08), transparent)',
                   padding: '1px 3px',
                   borderRadius: '3px',
                 }}
@@ -831,13 +831,13 @@ export default function Writing() {
                       maxWidth: '100%',
                       height: 'auto',
                       borderRadius: '12px',
-                      border: '2px solid rgba(255,192,0,0.2)',
+                      border: '2px solid rgba(255,255,255,0.1)',
                       boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
                       transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                       '&:hover': {
                         transform: 'scale(1.02)',
                         boxShadow: '0 12px 48px rgba(0,0,0,0.4)',
-                        border: '2px solid rgba(255,192,0,0.4)',
+                        border: '2px solid rgba(255,255,255,0.2)',
                       }
                     }}
                     {...props}
