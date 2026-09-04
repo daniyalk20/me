@@ -290,108 +290,114 @@ a:hover {
   cursor: pointer;
 }
 
-/* ----------------------- Hero (split, wireframe 1b) ----------------------- */
+/* ----------------------- Hero (split, tabbed CV panel — wireframe 1b) ----------------------- */
 .hero {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: calc(var(--header-height) + var(--space-xl)) var(--space-lg) var(--space-2xl);
   background: var(--bg-dark);
 }
 
-.hero-inner {
+.hero-card {
   width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  gap: var(--space-2xl);
+  max-width: 760px;
+  background: var(--bg-card);
+  border: var(--border-w) solid var(--border-accent);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
 }
 
-.hero-text {
-  flex: 1.1;
+.hero-card-top {
+  display: flex;
+  flex-direction: column-reverse;
+  border-bottom: var(--border-w) solid var(--border-accent);
+}
+
+.hero-card-text {
+  flex: 1;
+  padding: var(--space-xl) var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-md);
-  text-align: left;
+  justify-content: center;
+  gap: var(--space-sm);
 }
 
-.hero-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 1px;
-  padding: 4px 12px;
-  border: 1.5px solid var(--accent);
-  border-radius: var(--radius-pill);
+.hero-card-name {
+  font-size: clamp(1.7rem, 4vw, 2.2rem);
 }
 
-.hero-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.6rem, 6vw, 4.2rem);
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.05;
-}
-
-.hero-title .gradient-text {
-  color: var(--accent);
-}
-
-.hero-subtitle {
+.hero-card-tagline {
   font-family: var(--font-prose);
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-size: 1rem;
   color: var(--text-secondary);
-  max-width: 520px;
+  line-height: 1.5;
+}
+
+.hero-card-btn {
+  margin-top: var(--space-xs);
+  width: fit-content;
+}
+
+.hero-card-photo {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: 50% 15%;
+  display: block;
+  border-bottom: var(--border-w) solid var(--border-accent);
+}
+
+.hero-card-panel {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.hero-card-tabs {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  padding-bottom: var(--space-sm);
+  border-bottom: var(--border-w) dashed var(--border-subtle);
+}
+
+.hero-tab {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.hero-tab:hover {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.hero-tab-active {
+  color: var(--accent);
+}
+
+.hero-card-preview {
+  font-family: var(--font-prose);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
   line-height: 1.65;
 }
 
-.hero-cta {
-  display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-  margin-top: var(--space-sm);
-}
-
-.hero-media {
-  flex: 0 0 auto;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-photo-frame {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: var(--border-w) solid var(--border-accent);
-  box-shadow: var(--shadow-card);
-  overflow: hidden;
-  background: var(--bg-card);
-}
-
-.hero-photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-@media (min-width: 900px) {
-  .hero-inner {
+@media (min-width: 700px) {
+  .hero-card-top {
     flex-direction: row;
-    align-items: center;
-    text-align: left;
   }
-  .hero-text {
-    align-items: flex-start;
-  }
-  .hero-photo-frame {
-    width: 280px;
-    height: 280px;
+  .hero-card-photo {
+    width: 220px;
+    height: auto;
+    border-bottom: none;
+    border-left: var(--border-w) solid var(--border-accent);
   }
 }
 
@@ -916,6 +922,7 @@ a:hover {
   flex-direction: column;
   gap: 10px;
   padding-top: 24px;
+  scroll-margin-top: calc(var(--header-height) + var(--space-lg));
 }
 
 .cv-block-title {

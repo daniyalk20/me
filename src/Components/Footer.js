@@ -11,7 +11,7 @@ function Footer() {
     ];
 
     return (
-        <footer className="footer">
+        <footer className="footer" id="footer">
             <div className="footer-cta">
                 <span className="footer-cta-eyebrow">$ status --check</span>
                 <h2 className="footer-cta-title">Open to opportunities</h2>

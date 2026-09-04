@@ -47,13 +47,13 @@ function CV() {
             </header>
 
             {/* Summary */}
-            <div className="cv-block">
+            <div className="cv-block" id="cv-about">
                 <h2 className="cv-block-title">Summary</h2>
                 <p className="cv-summary">{summary}</p>
             </div>
 
             {/* Experience */}
-            <div className="cv-block">
+            <div className="cv-block" id="cv-experience">
                 <h2 className="cv-block-title">Experience</h2>
                 {experience.map((exp, idx) => (
                     <div key={idx} className="cv-item">
@@ -81,7 +81,7 @@ function CV() {
             </div>
 
             {/* Skills */}
-            <div className="cv-block">
+            <div className="cv-block" id="cv-skills">
                 <h2 className="cv-block-title">Skills</h2>
                 <div className="cv-skills-table">
                     {Object.entries(skills).map(([category, items]) => (
@@ -94,7 +94,7 @@ function CV() {
             </div>
 
             {/* Education */}
-            <div className="cv-block">
+            <div className="cv-block" id="cv-education">
                 <h2 className="cv-block-title">Education</h2>
                 {education.map((edu, idx) => (
                     <div key={idx} className="cv-item">
